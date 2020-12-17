@@ -41,7 +41,7 @@ class WallServiceTest {
     fun addPost(){
         val post = Post(ownerId = 2, fromId = 3,createdBy = 4, date = 17, text = "First post")
         service.add(post)
-        val expected = (post.id < 0)
+        val expected = (post.id > 0)
         assertTrue(expected)
     }
 }
