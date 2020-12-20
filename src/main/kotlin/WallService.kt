@@ -1,12 +1,12 @@
 class WallService {
-    private var postId: Long = 1
+
 
     private var wallPosts = emptyArray<Post>()
 
     fun add(post: Post): Post {
+        val idForAddedPost = if (wallPosts.isNotEmpty()) wallPosts.last().id + 1 else  1
         wallPosts += post
-        post.id = postId
-        postId++
+        post.id =idForAddedPost
         return wallPosts.last()
     }
 
@@ -17,7 +17,9 @@ class WallService {
                     id = post.id,
                     ownerId = post.ownerId,
                     createdBy = post.createdBy,
-                    text = post.text)
+                    text = post.text,
+                    likes = post.likes,
+                    signerId = post.signerId)
                 return true
             }
             }

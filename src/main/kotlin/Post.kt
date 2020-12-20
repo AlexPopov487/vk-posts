@@ -1,3 +1,5 @@
+import postComponents.*
+
 data class Post(
     var id: Long = 0, // выставляется автоматически в WallService.add()
     val ownerId: Int,
@@ -8,20 +10,24 @@ data class Post(
 //    val replyOwnerId: Int,
 //    val replyPostId: Int,
 //    val friendsOnly: Boolean,
-//    val comments: Any,
-//    val copyright: Any,
-//    val likes: Any,
-//    val reposts: Any,
-//    val views: Any,
+//    val comments: Comments,
+//    val copyright: Copyright,
+    val likes: Likes,
+//    val reposts: Reposts,
+//    val views: Views,
 //    val postType: String,
-//    val signerId: Int,
+//    val postSource: PostSource,
+//
+//    val geo: Geo,
+    val signerId: Int?,
+//    val copyHistory: Array<Reposts?>,
 //    val canPin: Boolean,
 //    val canDelete: Boolean,
 //    val canEdit: Boolean,
 //    val isPinned: Boolean,
 //    val markedAsAds: Boolean,
 //    val isFavorite: Boolean,
-//    val donut: Any,
-//    val postponedId: Int
+//    val donut: Donut,
+//    val postponedId: Int?
     ) {
 }
