@@ -1,3 +1,5 @@
+import attachments.AttachmentInterface
+import attachments.Attachments
 import postComponents.*
 
 data class Post(
@@ -17,7 +19,7 @@ data class Post(
 //    val views: Views,
 //    val postType: String,
 //    val postSource: PostSource,
-//
+    val attachments: Array<AttachmentInterface>,
 //    val geo: Geo,
     val signerId: Int?,
 //    val copyHistory: Array<Reposts?>,

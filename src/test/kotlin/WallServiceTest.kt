@@ -1,3 +1,5 @@
+import attachments.AttachmentInterface
+import attachments.Attachments
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -17,6 +19,7 @@ class WallServiceTest {
             date = 17,
             text = "First post",
             likes = Likes(count = 3, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(Attachments(type = "note"), Attachments(type="audio")),
             signerId = 0))
 
         service.add(Post(
@@ -26,6 +29,7 @@ class WallServiceTest {
             date = 27,
             text = "Second post",
             likes = Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(Attachments(type = "graffiti"), Attachments(type="photo")),
             signerId = 0))
 
         service.add(Post(
@@ -35,6 +39,7 @@ class WallServiceTest {
             date = 7,
             text = "Third post",
             likes = Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(Attachments(type = "app")),
             signerId = 0))
 
         val update = Post(
@@ -45,6 +50,7 @@ class WallServiceTest {
             25,
             "Update post",
             likes= Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(Attachments(type = "app")),
             0
         )
 
@@ -65,6 +71,7 @@ class WallServiceTest {
             date = 17,
             text = "First post",
             likes = Likes(count = 3, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(Attachments(type = "note"), Attachments(type="audio")),
             signerId = 0))
 
         service.add(Post(
@@ -74,6 +81,7 @@ class WallServiceTest {
             date = 27,
             text = "Second post",
             likes = Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(Attachments(type = "graffiti"), Attachments(type="photo")),
             signerId = 0))
 
         service.add(Post(
@@ -83,6 +91,7 @@ class WallServiceTest {
             date = 7,
             text = "Third post",
             likes = Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(Attachments(type = "note"), Attachments(type="audio")),
             signerId = 0))
 
         val update = Post(
@@ -93,6 +102,7 @@ class WallServiceTest {
             25,
             "Update post",
             likes= Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(Attachments(type = "note"), Attachments(type="audio")),
             0
         )
 
@@ -111,6 +121,7 @@ class WallServiceTest {
             date = 17,
             text = "First post",
             likes = Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(Attachments(type = "note"), Attachments(type="audio")),
             signerId = 0
         )
         service.add(post)

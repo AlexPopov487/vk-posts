@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WallServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-20T19:54:41" hostname="LAPTOP-HW" time="0.02">
+<testsuite name="WallServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-21T22:40:57" hostname="LAPTOP-HW" time="0.037">
   <properties/>
-  <testcase name="addPost" classname="WallServiceTest" time="0.02"/>
-  <testcase name="updatePost_True" classname="WallServiceTest" time="0.0"/>
-  <testcase name="updatePost_False" classname="WallServiceTest" time="0.0"/>
+  <testcase name="updatePost_True" classname="WallServiceTest" time="0.037"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
