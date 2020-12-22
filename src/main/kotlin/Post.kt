@@ -1,5 +1,4 @@
 import attachments.AttachmentInterface
-import attachments.Attachments
 import postComponents.*
 
 data class Post(
@@ -8,18 +7,18 @@ data class Post(
     val fromId: Int = 1,
     val createdBy: Int,
     val date: Int,
-    val text: String,
+    val text: String?,
 //    val replyOwnerId: Int,
 //    val replyPostId: Int,
 //    val friendsOnly: Boolean,
-//    val comments: Comments,
+//    val comments: Comments?,
 //    val copyright: Copyright,
     val likes: Likes,
-//    val reposts: Reposts,
+//    val reposts: Reposts?,
 //    val views: Views,
 //    val postType: String,
 //    val postSource: PostSource,
-    val attachments: Array<AttachmentInterface>,
+    val attachments: Array<AttachmentInterface>?,
 //    val geo: Geo,
     val signerId: Int?,
 //    val copyHistory: Array<Reposts?>,

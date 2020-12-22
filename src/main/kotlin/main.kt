@@ -1,5 +1,4 @@
-import attachments.AttachmentInterface
-import attachments.Attachments
+import attachments.*
 import postComponents.Likes
 
 fun main() {
@@ -14,7 +13,7 @@ fun main() {
         date = 17,
         text = "First post",
         likes = Likes(count = 3, userLikes = true, canLike = true, canPublish = true),
-        attachments = arrayOf<AttachmentInterface>(Attachments(type = "note"), Attachments(type="audio")),
+        attachments = arrayOf<AttachmentInterface>(AudioAttachment(), AppAttachment()),
         signerId = 0
     )
 
@@ -28,7 +27,7 @@ fun main() {
         date = 27,
         text = "Second post",
         likes = Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
-        attachments = arrayOf<AttachmentInterface>(Attachments(type = "graffiti"), Attachments(type="photo")),
+        attachments = arrayOf<AttachmentInterface>(NoteAttachment()),
         signerId = 0
     )
     val thirdPost = Post(
@@ -38,7 +37,7 @@ fun main() {
         date = 7,
         text = "Third post",
         likes = Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
-        attachments = arrayOf<AttachmentInterface>(Attachments(type = "app")),
+        attachments = arrayOf<AttachmentInterface>(PhotoAttachment(), AudioAttachment()),
         signerId = 0
     )
 
@@ -47,5 +46,4 @@ fun main() {
     println(service.update(secondPost))
     println(service.update(thirdPost))
 
-    println(post)
 }

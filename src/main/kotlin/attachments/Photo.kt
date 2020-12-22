@@ -2,7 +2,6 @@ package attachments
 
 
 data class Photo(
-    val type: String = "photo",
     val id: Int,
 //    val albumId: Int,
 //    val ownerId: Int,
@@ -11,6 +10,6 @@ data class Photo(
 //    val date: Int,
     val width: Int,
     val height: Int,
-    val sizes: Array<String> =  Array(4){"$type, www.gggg.com, $width, $height"}
+    val sizes: Array<String> =  Array(4){"photo, www.gggg.com, $width, $height"}
 ) {
 }
