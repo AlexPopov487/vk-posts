@@ -1,5 +1,7 @@
 import attachments.*
+import postComments.PostComment
 import postComponents.Likes
+import java.util.*
 
 fun main() {
 
@@ -16,8 +18,6 @@ fun main() {
         attachments = arrayOf<AttachmentInterface>(AudioAttachment(), AppAttachment()),
         signerId = 0
     )
-
-
 
 
     val secondPost = Post(
@@ -43,7 +43,11 @@ fun main() {
 
     println(service.add(post))
     println(service.add(secondPost))
-    println(service.update(secondPost))
-    println(service.update(thirdPost))
+    println(service.add(thirdPost))
+
+    print(service.createCComment(PostComment(postId = 3, id= 23, fromId= 34, date= 24, text= "Hey there!")))
+
+
+
 
 }

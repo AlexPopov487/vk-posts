@@ -1,4 +1,5 @@
 import attachments.AttachmentInterface
+import postComments.PostComment
 import postComponents.*
 
 data class Post(
