@@ -31,22 +31,8 @@ class WallService {
         return false
     }
 
-//    fun createComment(comment: PostComment): PostComment {
-//        for (post in wallPosts) {
-//            val idForPost = comment.postId
-//            if (post.id == idForPost) {
-//                postCommentsArray += comment
-//                break
-//            } else {
-//                throw PostNotFoundException("no post found with the id $idForPost")
-//            }
-//        }
-//
-//        return postCommentsArray.last()
-//    }
-//}
 
-    fun createCComment(comment: PostComment): PostComment {
+    fun createComment(comment: PostComment): PostComment {
         var isCommentAllowed = false
 
         for (post in wallPosts) {

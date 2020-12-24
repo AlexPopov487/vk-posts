@@ -2,6 +2,7 @@ import attachments.*
 import org.junit.Test
 
 import org.junit.Assert.*
+import postComments.PostComment
 import postComponents.Likes
 
 class WallServiceTest {
@@ -126,5 +127,44 @@ class WallServiceTest {
         service.add(post)
         val expected = (post.id > 0)
         assertTrue(expected)
+    }
+
+    @Test
+    fun createComment_compilesWell(){
+        val post = Post(
+            ownerId = 2,
+            fromId = 3,
+            createdBy = 4,
+            date = 17,
+            text = "First post",
+            likes = Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(NoteAttachment(), AudioAttachment()),
+            signerId = 0
+        )
+        service.add(post)
+
+        val commentToAdd = PostComment(postId = 1, id= 23, fromId= 34, date= 24, text= "Hey there!")
+        service.createComment(commentToAdd)
+
+        val expected = commentToAdd.postId == post.id
+        assertTrue(expected)
+    }
+    @Test(expected= PostNotFoundException::class)
+    fun createComment_throwsException(){
+        val post = Post(
+            ownerId = 1,
+            fromId = 3,
+            createdBy = 4,
+            date = 17,
+            text = "First post",
+            likes = Likes(count = 5, userLikes = true, canLike = true, canPublish = true),
+            attachments = arrayOf<AttachmentInterface>(NoteAttachment(), AudioAttachment()),
+            signerId = 0
+        )
+        service.add(post)
+
+        val commentToAdd = PostComment(postId = 2, id= 23, fromId= 34, date= 24, text= "Hey there!")
+        service.createComment(commentToAdd)
+
     }
 }

@@ -45,7 +45,7 @@ fun main() {
     println(service.add(secondPost))
     println(service.add(thirdPost))
 
-    print(service.createCComment(PostComment(postId = 3, id= 23, fromId= 34, date= 24, text= "Hey there!")))
+    print(service.createComment(PostComment(postId = 3, id= 23, fromId= 34, date= 24, text= "Hey there!")))
 
 
 
